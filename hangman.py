@@ -43,9 +43,8 @@ words = 'ant baboon badger bat bear beaver camel cat clam cobra \
       ram rat raven rhino salmon seal shark sheep skunk sloth snake \
       spider stork swan tiger toad trout turkey turtle weasel whale wolf wombat zebra'.split()
 
-for frame in HANGMAN_PICS:
-  print(frame)
+# for frame in HANGMAN_PICS:
+#   print(frame)
 
 for word in words:
   print(word)
-  
