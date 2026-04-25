@@ -56,7 +56,7 @@ words = 'ant baboon badger bat bear beaver camel cat clam cobra \
       lettuce cheese cheesecake darkness number game video dollar percentage \
       bulb seed arrow bow man woman fish invent potion checkers chess fire \
       water elf wind air month year day week hour minute second first third \
-      fourth star sun moon glass glasses place person thing banana apple'.split()
+      fourth star sun moon glass glasses place person thing banana apple pain page cube fidget'.split()
 
 # for frame in HANGMAN_PICS:
 #   print(frame)
@@ -89,6 +89,17 @@ def display_the_board(missed_letters, correct_letters, secret_word):
     print (letter, end=' ')
   print()
 
+  blanks = '_' * len(secret_word)
+
+  #write for loop to replace underscores with correct letters
+  for i in range(len(secret_word)):
+    if secret_word[i] in correct_letters:
+      blanks[i] = secret_word[i]
+  
+  #Display correct letter and underscores for the user
+  for letter in blanks:
+    print(letter, end=' ')
+  print()
 
 
 
