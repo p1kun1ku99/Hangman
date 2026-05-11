@@ -1,3 +1,9 @@
+"""
+    Project: Out of this world
+    Author: Isaac Tannenbaum
+    Class: The Coder School
+    README: Visit another planet and see how much you weigh on that planet
+"""
 gravity_factors = {
     "Mercury": 0.4155,
     "Venus": 0.8975,
@@ -16,7 +22,7 @@ gravity_factors = {
 
 def multiply():
     weight = float(input("What is your current weight? "))
-    planet = input(str("What is your destination planet? "))
+    planet = input(str("What is your destination planet?  Mercury, Venus, Earth, Moon, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, Ceres, Eris, Haumea, Makemake: "))
     if planet == "Earth":
         print(f"HEY!!! You're on Earth right now!!! But your weight is {weight * gravity_factors['Earth']}")
     elif planet == "Mercury":
@@ -35,5 +41,16 @@ def multiply():
         print(f"You're on Uranus! Your new weight is {weight * gravity_factors['Uranus']}")
     elif planet == "Neptune":
         print(f"You're on Neptune! Your new weight is {weight * gravity_factors['Neptune']}")
-
+    elif planet == "Pluto":
+        print(f"You're on Pluto! Your new weight is {weight * gravity_factors['Pluto']}")
+    elif planet == "Ceres":
+        print(f"You're on Ceres! Your new weight is {weight * gravity_factors['Creres']}")
+    elif planet == "Eris":
+        print(f"You're on Eris! Your new weight is {weight * gravity_factors['Eris']}")
+    elif planet == "Haumea":
+        print(f"You're on Haumea! Your new weight is {weight * gravity_factors['Haumea']}")
+    elif planet == "Makemake":
+        print(f"You're on Makemake! Your new weight is {weight * gravity_factors['Makemake']}")
+    else:
+        print("Dude, thats not a planet. But I guess it might be, and I just don't know. But I don't beleive you lol.")
 multiply()
