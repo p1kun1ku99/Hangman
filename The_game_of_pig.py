@@ -11,12 +11,12 @@ import time
 first_names = ['Emma', 'Liam', 'Olivia', 'Noah', 'Ava', 'Isabella', 'Asgore', 'Dr.', 'John', 'Evan', 'Flowey', 'Harry', 'Ender', 'Steve', 'Toriel', 'Isaac', 'Logan', 'Gourdy', 'Brash', 'Mango', 
                'Wens', 'Sus', 'Vecna', 'Nabstablook', 'Mad Dummy', 'C00lkid', 'Mettaton', 'Bob', 'Mary', 'Annoying Dog', 'Obnoxious Banana', 'Tralalelo Tralala', 'Tung tung', 'The', 'Greater',
                'Lesser', 'Sans', 'Chess', 'Ninja', 'Gaster', 'Mouse pad', 'Python', 'Pig', 'Mr.', 'Mrs.', 'Oof', 'Wrong', 'Bumblebee', 'Window', 'Wind', 'Earth', 'Fire', 'Water', 'Avatar',
-               'Angry', 'Jumbo', 'Undyne', 'Monster']
+               'Angry', 'Jumbo', 'Undyne', 'Monster', 'Unreal', 'Stacko', 'I am', 'It is', 'You are']
 
 last_names = ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Miller', 'Dreemurr', 'Alphys', 'Pork', 'Dranzo', 'Nightmare', 'Potter', 'Dragon', 'Black', 'Loox', 'Toriel', 'Tannenbaum', 
               'Hovarluck', 'Holloway', 'Google', 'Orbi', 'Five', 'Imposter', 'Demagorgon', 'Acid', 'Doe', 'EX', 'Ross', 'Supercalifragilisticexbialidocious', 'Herobrine', 'Dude', 'Duolingo',
-              'Los Tralalelos', 'Sahur', 'AAAAAAAAAAAAAAAAA', 'Baugette', 'Pigeon', 'Dog', 'Turtle', 'Master', 'Blaster', 'Brainrot', 'Enemy', 'Element', 'Tortoise', 'Magic', 'Disaster', 
-              'Tree', 'Tooth', 'Boot', 'Lava', 'Walk', 'Lose', 'LOL', 'Beast', 'Bird', 'Duck', 'News', 'Josh', 'Engine', 'Toilet', 'Spears', 'knight', 'Kid', 'Lover']
+              'Los Tralalelos', 'Sahur', 'AAAAAAAAAAAAAAAAA', 'Baugette', 'Pigeon', 'Dog', 'Turtle', 'Master', 'Blaster Master Laster Disaster Caster', 'Brainrot', 'Enemy', 'Element', 'Tortoise', 'Magic', 'Disaster', 
+              'Tree', 'Tooth', 'Boot', 'Lava', 'Walk', 'Lose', 'LOL', 'Beast', 'Bird', 'Duck', 'News', 'Josh', 'Engine', 'Toilet', 'Spears', 'knight', 'Kid', 'Lover', 'Bot', 'is wierd', 'is a weird name']
 
 def generate_random_name():
     """Generates a random full name from predefined lists."""
@@ -52,17 +52,21 @@ robotCount = 999999999999999999
 if robotsPlaying == 'y':
     while robotCount > playerCount:
         robotCount= int(input("How many robots are playing? "))
+else:
+    robotCount = 0
 if playerCount != 1:
     currentPlayer = 1
-    for i in range(playerCount):
-        playerT = input(f"Player {str(i + 1)}: Are you a human or robot?")
-        allPlayers.append(i + 1)
-        allPlayers[i] = Enity()
-        if playerT == "human":
-            allPlayers[i].playerType = "human"
-            allPlayers[i].name = input("What is your name?")    
-        else:
-            allPlayers[i].name = generate_random_name()
+    for i in range(playerCount - robotCount):
+        new_player = Enity()
+        new_player.playerType = "human"
+        new_player.name = input(f"Player {str(i + 1)}: What is your name?")
+        allPlayers.append(new_player)
+    for i in range(robotCount):
+        new_robot = Enity()
+        new_robot.playerType = "robot"
+        new_robot.name = generate_random_name()
+        allPlayers.append(new_robot)
+
 else:
     playerT = input(f"Player {str(1)}: Are you a human or robot?")
     allPlayers.append(1)
